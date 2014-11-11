@@ -1,43 +1,41 @@
+package vectors;
+
 /**
- * Klasa służy do reprezentacji wektora w przestrzeni trójwymiarowe
+ * Klasa służy do reprezentacji wektora w przestrzeni dwuwymiarowej
  */
-public class Vector3D {
+public class Vector2D {
     //pola
     private double x; //współrzędna x wektora
     private double y; //współrzędna y wektora
-    private double z; //współrzędna z wektora
+
     
     //konstruktor
     /**
-     * Konstruktor domyślny. Ustawia współrzędne wektora na [1, 0, 0]
+     * Konstruktor domyślny. Ustawia współrzędne wektora na [1, 0]
      */
-    public Vector3D() {
+    public Vector2D() {
         x=1;
         y=0;
-        z=0;
     }//public double
     
     /**
      * Konstruktor tworzy wektor o podanych współrzędnych
      * @param x współrzędna x wektora
      * @param y współrzędna y wektora
-     * @param z współrzędna z wektora
      */
-    public Vector3D(double x, double y, double z) {
+    public Vector2D(double x, double y) {
         this.x=x;
         this.y=y;
-        this.z=z;
-    }//public Vector3D
+    }//public Vector2D
     
     /**
      * Konstruktor tworzy wektora na podstawie innego wektora
      * @param anotherVector wektor do skopiowania
      */
-    public Vector3D(Vector3D anotherVector) {
+    public Vector2D(Vector2D anotherVector) {
         this.x=anotherVector.x;
         this.y=anotherVector.y;
-        this.z=anotherVector.z;
-    }//public Vector3D
+    }//public Vector2D
     
     //metody
     /**
@@ -45,7 +43,7 @@ public class Vector3D {
      * @return długość wektora
      */
     public double length() {
-        return Math.sqrt(x*x+y*y+z*z);
+        return Math.sqrt(x*x+y*y);
     }//public double lenght 
     
     /**
@@ -53,48 +51,35 @@ public class Vector3D {
      * @param anotherVector wektor do dodania
      * @return obliczona suma wektorów
      */
-    public Vector3D add(Vector3D anotherVector) {
-        return new Vector3D(x+anotherVector.x,
-                            y+anotherVector.y,
-                            z+anotherVector.z);
-    }//public Vector3D
+    public Vector2D add(Vector2D anotherVector) {
+        return new Vector2D(x+anotherVector.x,
+                            y+anotherVector.y);
+    }//public Vector2D add
             
     /**
      * Mnoży wektor przez skalar
      * @param alpha liczba, przez którą należy przemnożyć współrzędne wektora
      * @return wektor z pomnożonymi współrzędnymi
      */
-    public Vector3D multiplyByScalar(double alpha) {
-        return new Vector3D(alpha*x, alpha*y, alpha*z);
-    }//public Vector3D multiplyScalar        
+    public Vector2D multiplyByScalar(double alpha) {
+        return new Vector2D(alpha*x, alpha*y);
+    }//public Vector2D multiplyScalar        
     
     /**
      * Oblicza iloczyn skalarny dwóch wektorów
      * @param anotherVector drugi wektor
      * @return obliczony iloczyn skalarny
      */
-    public double dotProduct(Vector3D anotherVector) {
-        return x*anotherVector.x+y*anotherVector.y+z*anotherVector.z;
+    public double dotProduct(Vector2D anotherVector) {
+        return x*anotherVector.x+y*anotherVector.y;
     }//public double dotProduct
     
-    /**
-     * Oblicza iloczyn wektorowy wektorów
-     * @param anotherVector drugi wektor
-     * @return obliczony iloczyn wektorowy
-     */
-    public Vector3D crossProduct(Vector3D anotherVector) {
-        double newX=y*anotherVector.z-z*anotherVector.y;
-        double newY=z*anotherVector.x-x*anotherVector.z;
-        double newZ=x*anotherVector.y-y*anotherVector.x;
-        return new Vector3D(newX, newY, newZ);
-    }//public Vector3D crossProduct
-    
-    /**
+   /**
      * Przygotowuje reprezentację łańcuchową obiektu
-     * @return łańcuch opisujący wektor w postaci [x, y, z]
+     * @return łańcuch opisujący wektor w postaci [x, y]
      */
     public String toString() {
-        return "["+x+", "+y+", "+z+"]";
+        return "["+x+", "+y+"]";
     }//public String toString
             
-}//public class Vector3D
+}//public class Vector2D

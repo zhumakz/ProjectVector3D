@@ -1,3 +1,8 @@
+package testing;
+
+
+import vectors.Vector3D;
+
 /**
  * Klasa służy do przetestowania klasy Vector3D
  */

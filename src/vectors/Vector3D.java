@@ -1,5 +1,7 @@
+package vectors;
+
 /**
- * Klasa służy do reprezentacji wektora w przestrzeni trójwymiarowe
+ * Klasa służy do reprezentacji wektora w przestrzeni trójwymiarowej
  */
 public class Vector3D {
     //pola
