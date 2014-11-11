@@ -95,8 +95,19 @@ public class Vector3D {
      * Przygotowuje reprezentację łańcuchową obiektu
      * @return łańcuch opisujący wektor w postaci [x, y, z]
      */
+    @Override
     public String toString() {
         return "["+x+", "+y+", "+z+"]";
     }//public String toString
             
+    @Override
+    public boolean equals(Object anotherObject) {
+        if (anotherObject instanceof Vector3D) {
+            Vector3D tmp=(Vector3D)anotherObject;
+            return this.x==tmp.x && this.y==tmp.y && this.z==tmp.z;
+        } else {
+            return false;
+        }//else
+    }//public boolean equals
+    
 }//public class Vector3D

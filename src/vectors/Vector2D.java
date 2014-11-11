@@ -78,8 +78,19 @@ public class Vector2D {
      * Przygotowuje reprezentację łańcuchową obiektu
      * @return łańcuch opisujący wektor w postaci [x, y]
      */
+    @Override
     public String toString() {
         return "["+x+", "+y+"]";
     }//public String toString
+    
+    @Override
+    public boolean equals(Object anotherObject) {
+        if (anotherObject instanceof Vector2D) {
+            Vector2D tmp=(Vector2D)anotherObject;
+            return this.x==tmp.x && this.y==tmp.y;
+        } else {
+            return false;
+        }//else
+    }//public boolean equals
             
 }//public class Vector2D
