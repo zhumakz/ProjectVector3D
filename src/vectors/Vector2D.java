@@ -1,15 +1,13 @@
 package vectors;
 
-/**
- * Klasa służy do reprezentacji wektora w przestrzeni dwuwymiarowej
- */
+
 public class Vector2D {
-    //pola
-    private double x; //współrzędna x wektora
-    private double y; //współrzędna y wektora
+    //field
+    private double x; //x-coordinate of the vector
+    private double y; //y-coordinate of the vector
 
     
-    //konstruktor
+    //constructor
     /**
      * Konstruktor domyślny. Ustawia współrzędne wektora na [1, 0]
      */
