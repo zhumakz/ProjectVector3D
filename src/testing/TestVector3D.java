@@ -3,9 +3,7 @@ package testing;
 
 import vectors.Vector3D;
 
-/**
- * Klasa służy do przetestowania klasy Vector3D
- */
+
 public class TestVector3D {
     
     public static void main(String[] args) {
